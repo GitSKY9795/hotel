@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Luxe Haven - Gallery</title>
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --background-color: #f3f4f6;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            color: white;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .gallery-item {
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .gallery-item .caption {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 0.9em;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">Luxe Haven Hotel</div>
+        <div class="nav-links">
+            <a href="ama.html">Home</a>
+            
+        </div>
+    </nav>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="container">
+        <h2>Our Gallery</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="Facade,_Hotel_Southern_Grand,_Hotel_in_Vijayawada.avif" alt="Hotel Image 1">
+                <div class="caption"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="Interior_of_Deluxe_Rooms_in_Hotel_Southern,_one_of_the_best_hotels_in_Karol_Bag.avif" alt="Hotel Image 2">
+                <div class="caption"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="Beds_in_Family_suites_of_Hotel_Southern_in_New_Delhi.avif" alt="Hotel Image 3">
+                <div class="caption"></div>
+            </div>
+            <div class="gallery-item">
+                <img src="Interior_of_Super_Deluxe_Room_at_Hotel_Southern_-_A_budget_hotel_in_Karol_Bagh.avif" alt="Hotel Image 3">
+                <div class="caption"></div>
+            </div>
+            <!-- Add more images as needed -->
+        </div>
+    </section>
+</body>
+</html>

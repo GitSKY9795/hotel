@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Haven Hotel Management System</title>
+    <style>
+              :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --background-color: #f3f4f6;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+              .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            color: white;
+            animation: slideDown 0.5s ease;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+
+        /* Page Container */
+        .container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s ease;
+        }
+
+        /* Room Booking Section */
+        .room-booking {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .room-card {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, select, button, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .room-booking {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+   
+<br>
+    
+    <!-- Booking Section -->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxe Haven Hotel Management System</title>
+    <style>
+        /* Global Styles */
+        :root {
+            
+            --primary-color: #aad7f3;
+            --secondary-color: #2ecc71;
+            --accent-color: #e74c3c;
+            --background-color: #cdc8c258;
+            --text-color: #2c3e50;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        /* Navigation Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--primary-color);
+            padding: 1rem 5%;
+            color: rgb(17, 15, 15);
+            animation: slideDown 0.5s ease;
+           text-transform:uppercase;
+           
+    text-decoration:underline;
+        }
+
+        .navbar a {
+            color: rgb(30, 27, 27);
+            text-decoration: none;
+            margin: 0 15px;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar a:hover {
+            transform: scale(1.1);
+            color: var(--secondary-color);
+        }
+
+        /* Page Container */
+        .container {
+            width: 90%;
+            margin:auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s ease;
+            
+        }
+
+        /* Room Booking Section */
+        .room-booking {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .room-card {
+            background-color: var(--background-color);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .room-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, select, button, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid var(--primary-color);
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: var(--accent-color);
+        }
+
+        /* Animations */
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+            }
+            .room-booking {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<br>
+<body>
+    <style>
+        img{
+         aspect-ratio:  1.7777777777777777; ;
+            border-radius: 5%;
+           
+            border-color: #2c3e50;
+            width: 200;
+        }
+
+
+    </style>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="Screenshot 2024-11-29 122021.png" alt="">
+        </div>
+        <div class="nav-links">
+            <a href="ama.html">Home</a>
+            <a href="about .html">About us</a>
+                       <a href="room.html">Rooms</a>
+            <a href="book.html">Booking</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="gall.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+     <link rel="stylesheet" href="about .html">
+    
+     <br>
+        
+    </div>
+
+    <!-- Booking Section -->
+  
+
+    <script>
+        // Price details for room types
+        const roomPrices = {
+            "standard": 100,
+            "deluxe": 250,
+            "presidential": 500
+        };
+
+        // Handle booking form submission
+        document.getElementById('booking-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const roomType = document.getElementById('room-type').value;
+            const checkInDate = document.getElementById('check-in').value;
+            const checkOutDate = document.getElementById('check-out').value;
+
+            // Calculate the number of nights
+            const checkIn = new Date(checkInDate);
+            const checkOut = new Date(checkOutDate);
+            const timeDifference = checkOut - checkIn;
+            const numberOfNights = timeDifference / (1000 * 3600 * 24);
+
+            // Calculate the price based on the selected room type
+            const roomPrice = roomPrices[roomType];
+            const totalAmount = roomPrice * numberOfNights;
+
+            // Generate PDF receipt using jsPDF
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            doc.text('Luxe Haven Hotel - Booking Confirmation', 20, 20);
+            doc.text('--------------------------------------', 20, 30);
+            doc.text(`Name: ${name}`, 20, 40);
+            doc.text(`Email: ${email}`, 20, 50);
+            doc.text(`Room Type: ${roomType.charAt(0).toUpperCase() + roomType.slice(1)} Room`, 20, 60);
+            doc.text(`Check-in Date: ${checkInDate}`, 20, 70);
+            doc.text(`Check-out Date: ${checkOutDate}`, 20, 80);
+            doc.text(`Number of Nights: ${numberOfNights}`, 20, 90);
+            doc.text(`Total Amount: $${totalAmount}`, 20, 100);
+
+            // Save the PDF
+            doc.save('booking_receipt.pdf');
+        });
+    </script>
+</body>
+</html>
+<br>
+
+
+   
+<br>
+    <!-- Receipt Section -->
+    <div id="receipt" class="container">
+        <h2 style="text-align: center; font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; font-size: 200%; text-decoration: underline;">Hotel Southern</h2>
+        <p>Welcome to Hotel Southern, where luxury meets comfort in the heart of Delhi. Renowned for offering the best food and accommodation, our hotel is dedicated to providing an exceptional guest experience. Delight in our exquisite culinary offerings prepared by top chefs, and unwind in our elegantly designed rooms equipped with modern amenities. Whether you're here for business or leisure, our attentive staff ensures a memorable stay with unparalleled service. Discover the perfect blend of comfort and sophistication at Hotel Southern, your ideal destination for a remarkable stay in Delhi.</p>
+    </div>
+    <br>
+    <style>
+        h1{font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            text-decoration: underline;
+        }
+        h3{
+        
+            font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        }
+ 
+    </style>
+    <div id="details" class="container">
+        <h1>Comfort & Convenience at its Best - Hotels In New Delhi</h1>
+       <h3> A Centrally located, resplendent ambience, and unparalleled services are what Hotel Southern represents. With our impeccable hospitality and premium facilities, we are continuously setting new standards for hotels in New Delhi. A myriad of best in class facilities ensures an experience worth
+        revisiting.
+        
+        Southern Group of Hotels is well-known for providing high-quality accommodation at affordable prices. We have the best hotels in New Delhi, Vijayawada & our latest 4-Star Deluxe property in Jaipur. Our hotels in New Delhi are the best place to stay for leisure & Business travellers and are known for their hospitality, facilities & food.</h3>
+</div>
+<br> 
+
+   <div id="details" class="container">
+        
+    <h1>DINING</h1>
+    <img src="Masala_Dosa___Hotel_Southern_Grand__restaurant_near_Vijayawada_railway_station__Gandhi_Nagar_hotel_wewetx.avif" alt="food">
+        <img src="Andhra_Restaurant_Hotel_Southern_Regency_Karol_Bagh_Delhi_Hotel_near_Connaught_Place_boeaer_vqy4rv.avif" alt="food">
+    <img src="PHOTO-2018-04-20-17-14-34_lmyche_xf35ey_k4au2z.avif" alt="food">
+   <img width="550px" src="download (1).jpeg" alt="">
+
+    </div>
+    <style>
+         .iou{
+           text-align: center;
+            margin:auto;
+            padding: 20px;
+            background-color: rgba(154, 2, 2, 0.126);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            animation: fadeIn 1s ease;
+            
+        }
+
+    </style>
+    <div class="iou">
+<h3>Hotel Southern - New Delhi & Vijayawada
+
+    Hotel Southern 18/2</h3>
+    <h4>Hotel Southern 18/2, Arya Samaj Road, Karol Bagh New Delhi - 110005</h4>
+    <br>
+       <p>-------------------------------------------------------------------------------------------------</p>
+    <a href="https://maps.app.goo.gl/ig9Db5kYU5kZQTy77">OPEN LOCATION</a>
+    </div>
+    
+         <script>
+        // Price details for room types
+        const roomPrices = {
+            "standard": 100,
+            "deluxe": 250,
+            "presidential": 500
+        };
+
+        // Simple form validation and PDF generation using jsPDF
+        document.getElementById('booking-form').addEventListener('submit', function(e) ){
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const room}
